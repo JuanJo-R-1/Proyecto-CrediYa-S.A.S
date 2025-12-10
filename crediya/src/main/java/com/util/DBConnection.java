@@ -9,19 +9,19 @@ public class DBConnection {
 
     public static Connection getConnection() throws SQLException {
         if (connection == null | connection.isClosed()) {
-            String url = "jdbc:mysql://localhost:3306/";
-            String user = "";
-            String password = "";
-            connection = DriverManager.getConnection(url, user, password);
+            String URL = "jdbc:mysql://localhost:3306/";
+            String USER = "root";
+            String PASSWORD = "admin";
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
         }
         return connection;
     }
 
     public static void close() {
         try {
-            if (connection )
-        } catch (Exception e) {
-            
+            if (connection != null && !connection.isClosed()) connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

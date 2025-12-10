@@ -1,5 +1,4 @@
-package com.datavault.jdbc;
+package com.datavault;
 
 public class ClienteDv {
-    
 }

@@ -1,48 +1,45 @@
 package com.model;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 public class Pago {
 
-    private Integer id;
-    private Integer idCliente;
-    private double monto;
+    private int id;
+    private int idPrestamo;
     private LocalDate fechaPago;
-    private String metodoPago;
-    private String estado;
+    private double monto;
 
-    public Pago(Integer id, Integer idCliente, double monto, LocalDate fechaPago, String metodoPago, String estado) {
-        this.id = id;
-        this.idCliente = idCliente;
-        this.monto = monto;
-        this.fechaPago = fechaPago;
-        this.metodoPago = metodoPago;
-        this.estado = estado;
+    public Pago() {
     }
 
-    public Integer getId() {
+    public Pago(int idPrestamo, LocalDate fechaPago, double monto) {
+        this.idPrestamo = idPrestamo;
+        this.fechaPago = fechaPago;
+        this.monto = monto;
+    }
+
+    public Pago(int id, int idPrestamo, LocalDate fechaPago, double monto) {
+        this.id = id;
+        this.idPrestamo = idPrestamo;
+        this.fechaPago = fechaPago;
+        this.monto = monto;
+    }
+
+    // GETTERS Y SETTERS
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Integer getIdCliente() {
-        return idCliente;
+    public int getIdPrestamo() {
+        return idPrestamo;
     }
 
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
-    }
-
-    public double getMonto() {
-        return monto;
-    }
-
-    public void setMonto(double monto) {
-        this.monto = monto;
+    public void setIdPrestamo(int idPrestamo) {
+        this.idPrestamo = idPrestamo;
     }
 
     public LocalDate getFechaPago() {
@@ -53,45 +50,21 @@ public class Pago {
         this.fechaPago = fechaPago;
     }
 
-    public String getMetodoPago() {
-        return metodoPago;
+    public double getMonto() {
+        return monto;
     }
 
-    public void setMetodoPago(String metodoPago) {
-        this.metodoPago = metodoPago;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setMonto(double monto) {
+        this.monto = monto;
     }
 
     @Override
     public String toString() {
         return "Pago{" +
                 "id=" + id +
-                ", idCliente=" + idCliente +
-                ", monto=" + monto +
+                ", idPrestamo=" + idPrestamo +
                 ", fechaPago=" + fechaPago +
-                ", metodoPago='" + metodoPago + '\'' +
-                ", estado='" + estado + '\'' +
+                ", monto=" + monto +
                 '}';
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pago)) return false;
-        Pago pago = (Pago) o;
-        return Objects.equals(id, pago.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }
-

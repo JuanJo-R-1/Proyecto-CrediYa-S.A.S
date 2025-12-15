@@ -1,47 +1,41 @@
--- CREACION DE BASE DE DATOS
 CREATE DATABASE IF NOT EXISTS crediya_db;
-
 USE crediya_db;
 
--- TABLA EMPLEADOS
-CREATE TABLE empleados (
+CREATE TABLE empleado (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(80) NOT NULL,
-  documento VARCHAR(30) NOT NULL,
-  rol VARCHAR(30) NOT NULL,
+  nombre VARCHAR(80),
+  documento VARCHAR(30),
+  rol VARCHAR(30),
   correo VARCHAR(80),
   salario DECIMAL(10,2)
 );
 
--- TABLA CLIENTES
-CREATE TABLE clientes (
+CREATE TABLE cliente (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(80) NOT NULL,
-  documento VARCHAR(30) NOT NULL,
+  nombre VARCHAR(80),
+  documento VARCHAR(30),
   correo VARCHAR(80),
   telefono VARCHAR(20)
 );
 
--- TABLA PRESTAMOS
 CREATE TABLE prestamos (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  cliente_id INT NOT NULL,
-  empleado_id INT NOT NULL,
-  monto DECIMAL(12,2) NOT NULL,
-  saldo_pendiente DECIMAL(12,2) NOT NULL,
+  cliente_id INT,
+  empleado_id INT,
+  monto DECIMAL(12,2),
   interes DECIMAL(5,2),
   cuotas INT,
   fecha_inicio DATE,
   estado VARCHAR(20),
-  FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-  FOREIGN KEY (empleado_id) REFERENCES empleados(id)
+  saldo_pendiente DECIMAL(12,2),
+  FOREIGN KEY (cliente_id) REFERENCES cliente(id),
+  FOREIGN KEY (empleado_id) REFERENCES empleado(id)
 );
 
--- TABLA PAGOS
 CREATE TABLE pagos (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  prestamo_id INT NOT NULL,
-  fecha_pago DATE NOT NULL,
-  monto DECIMAL(10,2) NOT NULL,
+  prestamo_id INT,
+  fecha_pago DATE,
+  monto DECIMAL(10,2),
   FOREIGN KEY (prestamo_id) REFERENCES prestamos(id)
 );

@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Prestamo {
     private Integer id, clienteId, empleadoId;
-    private double monto, interes, saldo;
+    private double monto, interes;
     private int cuotas;
     private LocalDate fechaInicio;
     private String estado;
@@ -35,11 +35,11 @@ public class Prestamo {
 
 
     /*Getters y setters */
-    public Integer getPId () {
+    public Integer getId () {
         return id;
     }
 
-    public void setPId(Integer id) {
+    public void setId(Integer id) {
         this.id = id; 
     }
 
@@ -73,14 +73,6 @@ public class Prestamo {
 
     public void setInteres(double interes) {
         this.interes = interes;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
     }
 
     public int getCuotas() {
@@ -121,7 +113,7 @@ public class Prestamo {
     @Override
     public String toString() {
         return "Prestamo{" + "id = " + id + ", Cliente ID = '" + clienteId + '\'' + ", Empleado ID = '" + empleadoId + '\'' +", Monto = '" + monto +
-        '\'' + ", Interes = '" + interes + '\'' + ", Saldo = " + saldo + '\'' + ", Cuotas = " + cuotas + '\'' + ", Fecha Inicio = " + fechaInicio +
+        '\'' + ", Interes = '" + interes + '\'' + '\'' + ", Cuotas = " + cuotas + '\'' + ", Fecha Inicio = " + fechaInicio +
         '\'' + ", Estado = " + estado + '}';
     }
 

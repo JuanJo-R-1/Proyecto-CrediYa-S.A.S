@@ -28,7 +28,7 @@ public class PrestamoService {
                 interes,
                 cuotas,
                 LocalDate.now(),
-                "PENDIENTE"
+                "Pendiente"
         );
 
         prestamos.add(prestamo);
@@ -52,7 +52,7 @@ public class PrestamoService {
                 .sum();
 
         Prestamo prestamo = prestamos.stream()
-                .filter(p -> prestamoId.equals(p.getPId()))
+                .filter(p -> prestamoId.equals(p.getId()))
                 .findFirst()
                 .orElse(null);
 
@@ -61,7 +61,7 @@ public class PrestamoService {
                     + (prestamo.getMonto() * prestamo.getInteres() / 100);
 
             if (totalPagado >= totalConInteres) {
-                prestamo.setEstado("PAGADO");
+                prestamo.setEstado("Pagado");
             }
         }
     }

@@ -9,21 +9,16 @@ public class Pago {
     private LocalDate fechaPago;
     private double monto;
 
-    public Pago() {
+        public Pago() {
     }
 
-    public Pago(int idPrestamo, LocalDate fechaPago, double monto) {
-        this.idPrestamo = idPrestamo;
-        this.fechaPago = fechaPago;
-        this.monto = monto;
-    }
-
-    public Pago(int id, int idPrestamo, LocalDate fechaPago, double monto) {
+    public Pago(Integer id, Integer idPrestamo, LocalDate fechaPago, double monto) {
         this.id = id;
         this.idPrestamo = idPrestamo;
         this.fechaPago = fechaPago;
         this.monto = monto;
     }
+
 
     // GETTERS Y SETTERS
     public int getId() {

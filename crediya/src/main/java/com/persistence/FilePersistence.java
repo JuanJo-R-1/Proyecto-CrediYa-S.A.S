@@ -93,7 +93,8 @@ public class FilePersistence {
             String.valueOf(p.getMonto()),
             String.valueOf(p.getInteres()),
             String.valueOf(p.getCuotas()),
-            p.getFechaInicio().toString()
+            p.getFechaInicio().toString(),
+            String.valueOf(p.getEstado())
         ))
         .collect(Collectors.toList());
 
@@ -118,6 +119,7 @@ public class FilePersistence {
             p.setInteres(Double.parseDouble(arr[4].trim()));
             p.setCuotas(Integer.parseInt(arr[5].trim()));
             p.setFechaInicio(LocalDate.parse(arr[6].trim()));
+            p.setEstado(arr[7].trim());
             return p;
         })
         .collect(Collectors.toList());

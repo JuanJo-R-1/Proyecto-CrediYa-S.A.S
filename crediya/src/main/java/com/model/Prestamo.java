@@ -10,26 +10,36 @@ public class Prestamo {
     private LocalDate fechaInicio;
     private String estado;
 
-    public Prestamo() {}
+   public Prestamo() {
+    }
 
-    public Prestamo(Integer id, Integer clientId, Integer empleadoId, double monto, double interes, int cuotas, LocalDate fechaInicio, String estado, double saldo, double calcularMontoTotal) {
+    public Prestamo(
+            Integer id,
+            Integer clienteId,
+            Integer empleadoId,
+            double monto,
+            double interes,
+            int cuotas,
+            LocalDate fechaInicio,
+            String estado
+    ) {
         this.id = id;
-        this.clienteId = clientId;
+        this.clienteId = clienteId;
         this.empleadoId = empleadoId;
         this.monto = monto;
         this.interes = interes;
         this.cuotas = cuotas;
         this.fechaInicio = fechaInicio;
         this.estado = estado;
-        this.saldo = calcularMontoTotal() - 0.0;
     }
 
+
     /*Getters y setters */
-    public Integer getid () {
+    public Integer getPId () {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setPId(Integer id) {
         this.id = id; 
     }
 
@@ -93,7 +103,7 @@ public class Prestamo {
         return estado;
     }
 
-    public void SetEstado(String estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 

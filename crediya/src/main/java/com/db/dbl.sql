@@ -1,19 +1,19 @@
 CREATE DATABASE IF NOT EXISTS crediya_db;
 USE crediya_db;
 
-CREATE TABLE empleado (
+CREATE TABLE empleados (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(80),
-  documento VARCHAR(30),
+  documento INT ,
   rol VARCHAR(30),
   correo VARCHAR(80),
   salario DECIMAL(10,2)
 );
 
-CREATE TABLE cliente (
+CREATE TABLE clientes (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(80),
-  documento VARCHAR(30),
+  documento INT,
   correo VARCHAR(80),
   telefono VARCHAR(20)
 );
@@ -28,8 +28,8 @@ CREATE TABLE prestamos (
   fecha_inicio DATE,
   estado VARCHAR(20),
   saldo_pendiente DECIMAL(12,2),
-  FOREIGN KEY (cliente_id) REFERENCES cliente(id),
-  FOREIGN KEY (empleado_id) REFERENCES empleado(id)
+  FOREIGN KEY (clientes_id) REFERENCES clientes(id),
+  FOREIGN KEY (empleados_id) REFERENCES empleados(id)
 );
 
 CREATE TABLE pagos (
@@ -37,5 +37,5 @@ CREATE TABLE pagos (
   prestamo_id INT,
   fecha_pago DATE,
   monto DECIMAL(10,2),
-  FOREIGN KEY (prestamo_id) REFERENCES prestamos(id)
+  FOREIGN KEY (prestamos_id) REFERENCES prestamos(id)
 );

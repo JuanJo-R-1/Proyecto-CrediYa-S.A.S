@@ -19,7 +19,7 @@ public class ClienteJdbcDv implements ClienteDv {
 
     @Override
     public Cliente save(Cliente cl) throws SQLException {
-        String sql = "INSERT INTO cliente (nombre, documento, correo, telefono) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO clientes (nombre, documento, correo, telefono) VALUES (?, ?, ?, ?)";
 
         try (PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
@@ -42,7 +42,7 @@ public class ClienteJdbcDv implements ClienteDv {
 
     @Override
     public Optional<Cliente> findById(int id) throws SQLException {
-        String sql = "SELECT * FROM cliente WHERE id = ?";
+        String sql = "SELECT * FROM clientes WHERE id = ?";
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
@@ -67,7 +67,7 @@ public class ClienteJdbcDv implements ClienteDv {
 
     @Override
     public List<Cliente> findAll() throws SQLException {
-        String sql = "SELECT * FROM cliente";
+        String sql = "SELECT * FROM clientes";
         List<Cliente> list = new ArrayList<>();
 
         try (Statement st = conn.createStatement();
@@ -105,7 +105,7 @@ public class ClienteJdbcDv implements ClienteDv {
 
     @Override
     public void deleteById(int id) throws SQLException {
-        String sql = "DELETE FROM cliente WHERE id = ?";
+        String sql = "DELETE FROM clientes WHERE id = ?";
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);

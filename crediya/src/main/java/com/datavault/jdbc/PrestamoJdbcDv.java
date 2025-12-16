@@ -19,7 +19,6 @@ public class PrestamoJdbcDv implements PrestamoDv {
     @Override
     public Prestamo saveP(Prestamo prestamo) throws Exception {
         String sql = "INSERT INTO prestamos (id, clienteId, empleadoId, monto, interes, saldo, cuotas, fechaInicio, estado) VALUES (?, ?, ?, ? , ? , ? , ? , ? , ? )";
-
         try (PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setInt(1, prestamo.getId());
             ps.setInt(2, prestamo.getClienteId());
@@ -30,7 +29,6 @@ public class PrestamoJdbcDv implements PrestamoDv {
             ps.setDate(7, Date.valueOf(prestamo.getFechaInicio()));
             
             ps.executeUpdate();
-
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) {
                     prestamo.setId(rs.getInt(1));
@@ -107,7 +105,7 @@ public class PrestamoJdbcDv implements PrestamoDv {
 
     @Override
     public List<Prestamo> findPByPrestamoId(int id) throws Exception {
-        String sql = "SELECT * FROM pretamos WHERE id = ?";
+        String sql = "SELECT * FROM prestamos WHERE id = ?";
         List<Prestamo> list = new ArrayList<>();
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {

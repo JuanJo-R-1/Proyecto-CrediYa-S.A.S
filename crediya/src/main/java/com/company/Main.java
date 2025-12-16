@@ -48,6 +48,7 @@ public class Main {
                         sc.nextLine();
 
                         if (opEmp == 1) {
+                            System.out.println("-----------------");
                             System.out.print("Nombre: ");
                             String nombre = sc.nextLine();
                             System.out.print("Documento: ");
@@ -58,6 +59,7 @@ public class Main {
                             String correo = sc.nextLine();
                             System.out.print("Salario: ");
                             double salario = sc.nextDouble();
+                            System.out.println("-----------------");
 
                             Empleado empleado = new Empleado(
                                     null, nombre, documento, rol, correo, salario
@@ -81,6 +83,7 @@ public class Main {
                         sc.nextLine();
 
                         if (opCli == 1) {
+                            System.out.println("-----------------");
                             System.out.print("Nombre: ");
                             String nombre = sc.nextLine();
                             System.out.print("Documento: ");
@@ -89,7 +92,8 @@ public class Main {
                             String correo = sc.nextLine();
                             System.out.print("Telefono: ");
                             String telefono = sc.nextLine();
-
+                            System.out.println("-----------------");
+                            
                             Cliente cliente = new Cliente(
                                     null, nombre, documento, correo, telefono
                             );

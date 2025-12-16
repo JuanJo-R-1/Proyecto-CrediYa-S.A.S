@@ -25,7 +25,7 @@ public class PagoJdbcDv implements PagoDv {
     @Override
     public Pago save(Pago pago) throws SQLException {
 
-        String sql = "INSERT INTO pagos (prestamo_id, fecha_pago, monto) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO pagos (prestamos_id, fecha_pago, monto) VALUES (?, ?, ?)";
 
         try (PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 

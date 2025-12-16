@@ -15,13 +15,13 @@ CREATE TABLE clientes (
   nombre VARCHAR(80),
   documento INT,
   correo VARCHAR(80),
-  telefono VARCHAR(20)
+  telefono INT
 );
 
 CREATE TABLE prestamos (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  cliente_id INT,
-  empleado_id INT,
+  clientes_id INT,
+  empleados_id INT,
   monto DECIMAL(12,2),
   interes DECIMAL(5,2),
   cuotas INT,
@@ -34,7 +34,7 @@ CREATE TABLE prestamos (
 
 CREATE TABLE pagos (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  prestamo_id INT,
+  prestamos_id INT,
   fecha_pago DATE,
   monto DECIMAL(10,2),
   FOREIGN KEY (prestamos_id) REFERENCES prestamos(id)

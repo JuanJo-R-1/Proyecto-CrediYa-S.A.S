@@ -1,4 +1,4 @@
-## 📌 Sistema de Gestion de Prestamos – CrediYa S.A.S.
+## 📌 Sistema de Cobros de Cartera “CrediYa”
 
 Este proyecto corresponde al desarrollo de un sistema de consola en Java para la empresa CrediYa S.A.S., la cual se dedica al otorgamiento de creditos personales.  
 El sistema busca reemplazar el manejo manual de la informacion (como hojas de calculo) por una solucion organizada, modular y con persistencia en archivos y base de datos MySQL.

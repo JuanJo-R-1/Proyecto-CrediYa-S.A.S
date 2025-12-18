@@ -35,7 +35,7 @@ public class PagoService {
     }
 
     public List<Pago> listarPagos() throws Exception {
-        return pagoDv.findAll();
+        return pagoDv.findAllP();
     }
 
     public List<Pago> listarPagosPorPrestamo(int prestamoId) throws Exception {

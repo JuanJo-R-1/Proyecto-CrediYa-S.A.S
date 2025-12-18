@@ -80,7 +80,7 @@ public class PagoJdbcDv implements PagoDv {
     }
 
     @Override
-    public List<Pago> findAll() throws SQLException {
+    public List<Pago> findAllP() throws SQLException {
 
         String sql = "SELECT * FROM pagos";
         List<Pago> list = new ArrayList<>();

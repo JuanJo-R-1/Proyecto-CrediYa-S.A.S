@@ -34,8 +34,8 @@ CREATE TABLE prestamos (
 
 CREATE TABLE pagos (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  prestamos_id INT,
+  prestamo_id INT,
   fecha_pago DATE,
   monto DECIMAL(10,2),
-  FOREIGN KEY (prestamos_id) REFERENCES prestamos(id)
+  FOREIGN KEY (prestamo_id) REFERENCES prestamos(id)
 );

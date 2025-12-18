@@ -17,6 +17,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+
 public class FilePersistence {
 
     private static final String RUTA = "src/main/resources/data/";
@@ -151,7 +152,7 @@ public class FilePersistence {
                 Double.parseDouble(arr[3])
             ))
             .toList();
-    }
+        }
+        }
 }
 
-}

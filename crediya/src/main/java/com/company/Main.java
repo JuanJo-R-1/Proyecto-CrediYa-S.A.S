@@ -6,6 +6,7 @@ import com.service.ClienteService;
 import com.service.EmpleadoService;
 import com.service.PagoService;
 import com.service.PrestamoService;
+import com.datavault.PagoDv;
 import com.datavault.jdbc.PagoJdbcDv;
 
 import java.util.Scanner;
@@ -31,7 +32,8 @@ public class Main {
                 System.out.println("2. Gestion de clientes");
                 System.out.println("3. Crear prestamo");
                 System.out.println("4. Registrar pago");
-                System.out.println("5. Salir");
+                System.out.println("5. Historial de Pagos");
+                System.out.println("6. Salir");
                 System.out.print("Seleccione una opcion: ");
 
                 int opcion = sc.nextInt();
@@ -139,7 +141,13 @@ public class Main {
                         break;
 
                     case 5:
-                        salir = true;
+                        System.out.println("\n ----- HISTORIAL DE PAGOS ------ ");
+                        PagoService.listarPagos()
+                            .forEach(System.out::println);
+                        break;
+                    case 6:
+
+                    salir = true;
                         System.out.println("Saliendo del sistema...");
                         break;
 
